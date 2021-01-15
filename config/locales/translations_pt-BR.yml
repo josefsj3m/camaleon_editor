@@ -1,0 +1,19 @@
+#
+# Translations to be used in javascript
+#
+pt-BR:
+  mvm_js:
+    back_to_top: 'Voltar ao topo'
+    processing_payment_title: 'Processando o pagamento'
+    processing_payment: 'Por favor, aguarde enquanto processamos o pagamento'
+    authorization_error_title: 'Erro de autorização'
+    authorization_error: 'Não foi possível obter autorização para o pagamento. Por favor, tente novamente.'
+    timeout_title: 'Tempo excedido'
+    timeout_msg:  'Não houve resposta para o pedido de autorização de pagamento. Por favor, tente novamente.'
+    invalid_cc_name: 'Nome do cartão de crédito é inválido.'
+    invalid_cc_number: 'Número do cartão de crédito é inválido.'
+    invalid_date_format: 'Formato da data é inválido.'
+    invalid_cvv: 'CVV é inválido.'
+    bank_communication_failure: 'Falha de comunicação com o banco.'
+    required_field_title: 'Campo obrigatório'
+    required_field_blank: 'Campo obrigatório não pode ficar em branco.'
