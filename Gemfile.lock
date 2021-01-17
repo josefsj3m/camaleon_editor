@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    camaleon_editor (0.0.4)
+    camaleon_editor (0.0.5)
       i18n-js (~> 3.8)
       rails
 

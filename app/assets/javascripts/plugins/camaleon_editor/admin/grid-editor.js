@@ -8,7 +8,7 @@ jQuery(function(){
     $.fn.gridEditor_libraries = [];
     //********************** editor content options **********************//
     $.fn.gridEditor_options = {
-        text: {title: "Text", description: I18n("mvm_js.allows_plain_text", {defaultValue: "Allows you to include plain text in any column."}), libraries: [], callback: grid_text_builder},
+        text: {title: "Text", description: I18n.translate("mvm_js.allows_plain_text", {defaultValue: "Allows you to include plain text in any column."}), libraries: [], callback: grid_text_builder},
         editor: {title: "Editor", description: I18n("mvm_js.allows_html_text", {defaultValue: "Allows you to include html text in any column."}), libraries: [], callback: grid_editor_builder},
         tab: {title: "Tabs", description: I18n("mvm_js.allows_tabs_container", {defaultValue: "Allows you to include tabs container in any column."}), callback: grid_tab_builder},
         slider: {title: "Slider", description: I18n("mvm_js.allows_slider_animation", {defaultValue: "Allows you to include a slider animation in any column.",}), callback: grid_slider_builder},
