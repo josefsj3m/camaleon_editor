@@ -1,0 +1,15 @@
+es:
+  admin:
+    js:
+      grid_editor:
+        templates: "Plantillas"
+        use_tpl: "Use Template"
+        save_tpl: "Guardar como plnatilla"
+        list: "Lista de plantillas"
+        text_editor: "Editor de Texto"
+        blocks: "Bloques"
+        contents: "Contenidos"
+        toggle_editor: "Esta seguro de abandonar este editor?"
+        del_block: "Esta seguro de eliminar este bloque?"
+        del_content: "Esta seguro de eliminar este contenido?"
+        clear_editor: "Esta seguro de limpiar el editor?"

@@ -3,21 +3,21 @@ window.grid_tab_builder = (panel, editor)->
   id_accor = panel.attr("id") || "tab_" + Math.floor((Math.random() * 100000) + 1)
   panel.attr("id", id_accor)
   tpl = $('<div><table class="table table-hover">' +
-      '<thead><th></th><th>Title</th><th class="hidden">Content</th><th></th></thead>' +
+      '<thead><th></th><th>'+I18n("mvm_js.tabs.title")+'</th><th class="hidden">'+I18n("mvm_js.tabs.content")+'</th><th></th></thead>' +
       '<tbody></tbody>' +
       '</table>'+
       '<a class="btn btn-default add_item">Add Item <i class="fa fa-plus-circle"></i></a></div>');
 
   # link buttons
   tpl.find(".add_item").click(->
-    show_form(add_item("Title sample"))
+    show_form(add_item(I18n("mvm_js.tabs.title_sample")))
     return false;
   )
   tpl.on("click", "a.edit_item", ->
     show_form($(this).closest("tr"))
     return false
   ).on("click", "a.del_item", ->
-    return false if(!confirm(I18n("msg.confirm_del")))
+    return false if(!confirm(I18n("mvm_js.tabs.confirm_del")))
     $(this).closest("tr").fadeDestroy();
     return false
   )
@@ -27,7 +27,7 @@ window.grid_tab_builder = (panel, editor)->
 
   # add a row in the table
   add_item = (title, text)->
-    tr = $("<tr><td><i class='fa fa-arrows' style='cursor: move;'></i></td><td class='name'></td><td class='hidden'><textarea class='descr hidden'></textarea></td><td class='text-right'><a href='#' class='edit_item' title='Edit'><i class='fa fa-pencil'></i></a> <a href='#' class='del_item' title='Destroy'><i class='fa fa-trash'></i></a></td></tr>")
+    tr = $("<tr><td><i class='fa fa-arrows' style='cursor: move;'></i></td><td class='name'></td><td class='hidden'><textarea class='descr hidden'></textarea></td><td class='text-right'><a href='#' class='edit_item' title='"+I18n("mvm_js.tabs.edit")+"'><i class='fa fa-pencil'></i></a> <a href='#' class='del_item' title='"+I18n("mvm_js.tabs.delete")+"'><i class='fa fa-trash'></i></a></td></tr>")
     tpl.find("tbody").append(tr)
     return update_item(tr, title, text)
 
@@ -75,4 +75,4 @@ window.grid_tab_builder = (panel, editor)->
     modal.modal("hide")
     editor.trigger("auto_save")
 
-  open_modal({title: "Tab Panel", modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: tpl, on_submit: submit_callback })
+  open_modal({title: I18n("mvm_js.tabs.tab_panel"), modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: tpl, on_submit: submit_callback })

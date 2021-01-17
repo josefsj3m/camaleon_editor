@@ -1,0 +1,49 @@
+en:
+  admin:
+    js:
+      grid_editor:
+        templates: "Templates"
+        use_tpl: "Use Template"
+        save_tpl: "Save as template"
+        list: "List of templates"
+        text_editor: "Text Editor"
+        blocks: "Blocks"
+        contents: "Content Elements"
+        toggle_editor: "Are you sure to leave this editor?"
+        del_block: "Are you sure to delete this block?"
+        del_content: "Are you sure to delete this content?"
+        clear_editor: "Are you sure to clear the editor?"
+  views:
+    style_settings:
+      background_image: 'Background Image'
+      position: 'Position'
+      image: 'Image:'
+      default: 'Default'
+      left_top: 'Left Top'
+      left_center: 'Left Center'
+      left_bottom: 'Left Bottom'
+      center_top: 'Center Top'
+      center_center: 'Center Center'
+      center_bottom: 'Center Bottom'
+      right_top: 'Right Top'
+      right_center: 'Right Center'
+      right_bottom: 'Right Bottom'
+      repeat: 'Repeat'
+      no_repeat: 'No Reapet'
+      size: 'Size'
+      normal: 'Normal'
+      contain: 'Contain'
+      cover: 'Cover'
+      attachment: 'Attachment'
+      fixed: 'Fixed'
+      background_color: 'Background Color:'
+      text_color: 'Text Color:'
+      border: 'Border'
+      color: 'Color:'
+      width: 'Width:'
+      margin: 'Margin:'
+      padding: 'Padding:'
+      top: 'Top:'
+      right: 'Right:'
+      left: 'Left:'
+      bottom: 'Bottom:'

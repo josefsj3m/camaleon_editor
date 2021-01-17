@@ -1,7 +1,7 @@
 # grid content tab builder
 window.grid_audio_builder = (panel, editor)->
   form = $('<form>'+
-      '<div class="form-group"><label class="control-label">Media</label>
+      '<div class="form-group"><label class="control-label">'+I18n("mvm_js.audio.media")+'</label>
        <div class="group-input-fields-content input-group">
           <input type="url" class="form-control url_file" />
           <span class="input-group-addon btn_upload"><i class="fa fa-upload"></i> </span>
@@ -29,4 +29,4 @@ window.grid_audio_builder = (panel, editor)->
     modal.modal("hide")
     editor.trigger("auto_save")
 
-  open_modal({title: "Audio Form", modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: form, callback: form_callback, on_submit: submit_form_callback })
+  open_modal({title: I18n('mvm_js.audio.audio_form'), modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: form, callback: form_callback, on_submit: submit_form_callback })

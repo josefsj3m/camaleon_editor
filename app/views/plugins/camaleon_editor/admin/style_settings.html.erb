@@ -1,55 +1,55 @@
 <form>
     <fieldset>
-        <legend>Background Image</legend>
+        <legend><%= I18n.t('views.style_settings.background_image') %></legend>
         <div class='col-md-12'>
             <div class="form-group">
-                <label class="control-label">Image:</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.image') %></label>
                 <input placeholder="Upload your image or paste an URL" type="url" class="form-control bg_image file_upload" name="b-img" />
             </div>
         </div>
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Position</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.position') %></label>
                 <select class="form-control pos_bg" name="b-pos">
-                    <option value="">Default</option>
-                    <option value="left top">Left Top</option>
-                    <option value="left center">Left Center</option>
-                    <option value="left bottom">Left Bottom</option>
-                    <option value="center top">Center Top</option>
-                    <option value="center center">Center Center</option>
-                    <option value="center bottom">Center Bottom</option>
-                    <option value="right top">Right Top</option>
-                    <option value="right center">Right Center</option>
-                    <option value="right bottom">Right Bottom</option>
+                    <option value=""><%= I18n.t('views.style_settings.default') %></option>
+                    <option value="left top"><%= I18n.t('views.style_settings.left_top') %></option>
+                    <option value="left center"><%= I18n.t('views.style_settings.left_center') %></option>
+                    <option value="left bottom"><%= I18n.t('views.style_settings.left_bottom') %></option>
+                    <option value="center top"><%= I18n.t('views.style_settings.center_top') %></option>
+                    <option value="center center"><%= I18n.t('views.style_settings.center_center') %></option>
+                    <option value="center bottom"><%= I18n.t('views.style_settings.center_bottom') %></option>
+                    <option value="right top"><%= I18n.t('views.style_settings.right_top') %></option>
+                    <option value="right center"><%= I18n.t('views.style_settings.right_center') %></option>
+                    <option value="right bottom"><%= I18n.t('views.style_settings.right_bottom') %></option>
                 </select>
             </div>
         </div>
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Repeat</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.repeat') %></label>
                 <select class="repeat_bg form-control" name="b-r">
-                    <option value="no-repeat">No Repeat</option>
-                    <option value="repeat">Repeat</option>
+                    <option value="no-repeat"><%= I18n.t('views.style_settings.no_repeat') %></option>
+                    <option value="repeat"><%= I18n.t('views.style_settings.repeat') %></option>
                 </select>
             </div>
         </div>
         <div class="clearfix"></div>
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Size</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.size') %></label>
                 <select class="form-control size_bg" name="b-s">
-                    <option value="">Normal</option>
-                    <option value="contain">Contain</option>
-                    <option value="cover">Cover</option>
+                    <option value=""><%= I18n.t('views.style_settings.normal') %></option>
+                    <option value="contain"><%= I18n.t('views.style_settings.contain') %></option>
+                    <option value="cover"><%= I18n.t('views.style_settings.cover') %></option>
                 </select>
             </div>
         </div>
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Attachment</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.attachment') %></label>
                 <select class="form-control attach_bg" name="b-a">
-                    <option value="">Normal</option>
-                    <option value="fixed">Fixed</option>
+                    <option value=""><%= I18n.t('views.style_settings.normal') %></option>
+                    <option value="fixed"><%= I18n.t('views.style_settings.fixed') %></option>
                 </select>
             </div>
         </div>
@@ -58,7 +58,7 @@
     <div class="row">
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Background Color:</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.background_color') %></label>
                 <div class="input-group color panel_color" data-color="" data-color-format="rgba">
                     <input type="text" class="form-control input-value color_bg" name="b-c" value="">
                     <span class="input-group-addon"><i></i></span>
@@ -67,7 +67,7 @@
         </div>
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Text Color:</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.text_color') %></label>
                 <div class="input-group panel_color color" data-color="">
                     <input type="text" class="form-control input-value text_bg" name="t-c" value="">
                     <span class="input-group-addon"><i></i></span>
@@ -81,7 +81,7 @@
         <legend>Border</legend>
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Color:</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.color') %></label>
                 <div class="input-group panel_color color" data-color="">
                     <input type="text" class="form-control input-value color_border" name="bo-c" value="">
                     <span class="input-group-addon"><i></i></span>
@@ -90,26 +90,26 @@
         </div>
         <div class='col-md-6'>
             <div class="form-group">
-                <label class="control-label">Width:</label>
+                <label class="control-label"><%= I18n.t('views.style_settings.width') %></label>
                 <input type="number" class="form-control input-value border_width" name="bo-c" value="">
             </div>
         </div>
     </fieldset>
 
-    <div class="form-group"><label class="control-label">Margin:</label>
-        <div class="input-group"><span class="input-group-addon">Top: </span>
-            <input class="form-control" type="number" name="m-t"> <span class="input-group-addon">Right: </span>
-            <input type="number" class="form-control" name="m-r"> <span class="input-group-addon">Bottom: </span>
-            <input class="form-control" type="number" name="m-b"> <span class="input-group-addon">Left: </span>
+    <div class="form-group"><label class="control-label"><%= I18n.t('views.style_settings.margin') %></label>
+        <div class="input-group"><span class="input-group-addon"><%= I18n.t('views.style_settings.top') %> </span>
+            <input class="form-control" type="number" name="m-t"> <span class="input-group-addon"><%= I18n.t('views.style_settings.right') %> </span>
+            <input type="number" class="form-control" name="m-r"> <span class="input-group-addon"><%= I18n.t('views.style_settings.bottom') %> </span>
+            <input class="form-control" type="number" name="m-b"> <span class="input-group-addon"><%= I18n.t('views.style_settings.left') %> </span>
             <input class="form-control" type="number" name="m-l">
         </div>
     </div>
 
-    <div class="form-group"><label class="control-label">Padding:</label>
-        <div class="input-group"><span class="input-group-addon">Top: </span>
-            <input class="form-control" type="number" name="p-t"> <span class="input-group-addon">Right: </span>
-            <input type="number" class="form-control" name="p-r"> <span class="input-group-addon">Bottom: </span>
-            <input class="form-control" type="number" name="p-b"> <span class="input-group-addon">Left: </span>
+    <div class="form-group"><label class="control-label"><%= I18n.t('views.style_settings.padding') %></label>
+        <div class="input-group"><span class="input-group-addon"><%= I18n.t('views.style_settings.top') %> </span>
+            <input class="form-control" type="number" name="p-t"> <span class="input-group-addon"><%= I18n.t('views.style_settings.right') %> </span>
+            <input type="number" class="form-control" name="p-r"> <span class="input-group-addon"><%= I18n.t('views.style_settings.bottom') %> </span>
+            <input class="form-control" type="number" name="p-b"> <span class="input-group-addon"><%= I18n.t('views.style_settings.left') %> </span>
             <input class="form-control" type="number" name="p-l">
         </div>
     </div>

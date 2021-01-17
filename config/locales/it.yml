@@ -1,0 +1,15 @@
+it:
+  admin:
+    js:
+      grid_editor:
+        templates: "Modelli"
+        use_tpl: "Use Template"
+        save_tpl: "Salva come modello"
+        list: "Elenco dei modelli"
+        text_editor: "Editor di testo"
+        blocks: "Blocchi"
+        contents: "Contenuto"
+        toggle_editor: "Sei sicuro di voler lasciare questo editor?"
+        del_block: "Sei sicuro di voler eliminare questo blocco?"
+        del_content: "Sei sicuro di voler cancellare questo contenuto?"
+        clear_editor: "Sei sicuro di voler cancellare l'editor?"

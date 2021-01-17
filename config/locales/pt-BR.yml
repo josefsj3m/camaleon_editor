@@ -1,0 +1,49 @@
+pt-BR:
+  admin:
+    js:
+      grid_editor:
+        templates: "Modelos"
+        use_tpl: "Use TemplateUsar Modelo"
+        save_tpl: "Salvar como Modelo"
+        list: "Lista de modelos"
+        text_editor: "Editor de Texto"
+        blocks: "Blocos"
+        contents: "Elementos de Conteúdo"
+        toggle_editor: "Tem certeza que você quer sair do editor?"
+        del_block: "Tem certeza que você quer excluir este bloco?"
+        del_content: "Tem certeza que você quer excluir este conteúdo?"
+        clear_editor: "Tem certeza que você quer limpar o editor?"
+  views:
+    style_settings:
+      background_image: 'Imagem de Fundo'
+      image: 'Imagem:'
+      position: 'Posição'
+      default: 'Padrão'
+      left_top: 'Esquerda Superior'
+      left_center: 'esquerda Centro'
+      left_bottom: 'Esquerda Inferior'
+      center_top: 'Centro Superior'
+      center_center: 'Centro Centro'
+      center_bottom: 'Centro Inferior'
+      right_top: 'Direirta Superior'
+      right_center: 'Direita Centro'
+      right_bottom: 'Direita Inferior'
+      repeat: 'Repetir'
+      no_repeat: 'Sem Repetição'
+      size: 'Tamanho'
+      normal: 'Normal'
+      contain: 'Contém'
+      cover: 'Capa'
+      attachment: 'Anexo'
+      fixed: 'Fixo'
+      background_color: 'Cor de Fundo:'
+      text_color: 'Cor do Texto:'
+      border: 'Borda'
+      color: 'Cor:'
+      width: 'Largura:'
+      margin: 'Margem:'
+      padding: 'Margem Interna:'
+      top: 'Superior:'
+      right: 'Direita:'
+      left: 'Esquerda:'
+      bottom: 'Inferior:'
