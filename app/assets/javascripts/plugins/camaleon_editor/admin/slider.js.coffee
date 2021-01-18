@@ -3,7 +3,7 @@ window.grid_slider_builder = (panel, editor)->
   id_accor = panel.attr("id") || "slider_" + Math.floor((Math.random() * 100000) + 1)
   panel.attr("id", id_accor)
   tpl = $('<div><table class="table table-hover">' +
-      '<thead><th></th><th>'+I18n("mvm_js.slider.image")+'</th><th></th></thead>' +
+      '<thead><th></th><th>'+I18n.t("mvm_js.slider.image")+'</th><th></th></thead>' +
       '<tbody></tbody>' +
       '</table>'+
       '<a class="btn btn-default add_item">Add Item <i class="fa fa-plus-circle"></i></a></div>');
@@ -17,7 +17,7 @@ window.grid_slider_builder = (panel, editor)->
     show_form($(this).closest("tr"))
     return false
   ).on("click", "a.del_item", ->
-    return false if(!confirm(I18n("mvm_js.slider.confirm_del")))
+    return false if(!confirm(I18n.t("mvm_js.slider.confirm_del")))
     $(this).closest("tr").fadeDestroy();
     return false
   )
@@ -27,7 +27,7 @@ window.grid_slider_builder = (panel, editor)->
 
   # add a row in the table
   add_item = (media, caption)->
-    tr = $("<tr><td><i class='fa fa-arrows' style='cursor: move;'></i></td><td class='name'></td><td class='text-right'><textarea class='descr hidden'></textarea> <input class='media hidden' /> <a href='#' class='edit_item' title='"+I18n("mvm_js.slider.edit")+"'><i class='fa fa-pencil'></i></a> <a href='#' class='del_item' title='"+I18n("mvm_js.slider.delete")+"'><i class='fa fa-trash'></i></a></td></tr>")
+    tr = $("<tr><td><i class='fa fa-arrows' style='cursor: move;'></i></td><td class='name'></td><td class='text-right'><textarea class='descr hidden'></textarea> <input class='media hidden' /> <a href='#' class='edit_item' title='"+I18n.t("mvm_js.slider.edit")+"'><i class='fa fa-pencil'></i></a> <a href='#' class='del_item' title='"+I18n.t("mvm_js.slider.delete")+"'><i class='fa fa-trash'></i></a></td></tr>")
     tpl.find("tbody").append(tr)
     return update_item(tr, media, caption)
 
@@ -51,7 +51,7 @@ window.grid_slider_builder = (panel, editor)->
               <span class="input-group-addon btn_upload"><i class="fa fa-upload"></i> </span>
             </div>
         </div>'+
-        '<div class="form-group"><label class="control-label">'+I18n("mvm_js.slider.caption")+'</label><textarea class="form-control descr"></textarea></div>'+
+        '<div class="form-group"><label class="control-label">'+I18n.t("mvm_js.slider.caption")+'</label><textarea class="form-control descr"></textarea></div>'+
         '</form>');
     form.find(".url_file").val(tr.find("td.name").html())
     form.find(".descr").val(tr.find(".descr").val())
@@ -72,7 +72,7 @@ window.grid_slider_builder = (panel, editor)->
       update_item(tr, form.find(".url_file").val(), form.find(".descr").val())
       modal.modal("hide")
 
-    open_modal({id: 'cama_editor_modal2', title: I18n("mvm_js.slider.slider_form"), type: "primary", modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: form, callback: form_callback, on_submit: submit_form_callback })
+    open_modal({id: 'cama_editor_modal2', title: I18n.t("mvm_js.slider.slider_form"), type: "primary", modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: form, callback: form_callback, on_submit: submit_form_callback })
 
   # save information in editor
   submit_callback = (modal)->
@@ -80,11 +80,11 @@ window.grid_slider_builder = (panel, editor)->
     res2 = ""
     controls = '<a class="left carousel-control" href="#'+id_accor+'" role="button" data-slide="prev">
                   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only">'+I18n("mvm_js.slider.previous")+'</span>
+                  <span class="sr-only">'+I18n.t("mvm_js.slider.previous")+'</span>
                 </a>
                 <a class="right carousel-control" href="#'+id_accor+'" role="button" data-slide="next">
                   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                  <span class="sr-only">'+I18n("mvm_js.slider.next")+'</span>
+                  <span class="sr-only">'+I18n.t("mvm_js.slider.next")+'</span>
                 </a>'
 
     tpl.find("tbody tr").each (index, item)->
@@ -95,4 +95,4 @@ window.grid_slider_builder = (panel, editor)->
     modal.modal("hide")
     editor.trigger("auto_save")
 
-  open_modal({title: I18n("mvm_js.slider.slider_panel"), modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: tpl, on_submit: submit_callback })
+  open_modal({title: I18n.t("mvm_js.slider.slider_panel"), modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: tpl, on_submit: submit_callback })

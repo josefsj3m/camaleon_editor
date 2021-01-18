@@ -3,28 +3,28 @@ window.grid_accordion_builder = (panel, editor)->
   id_accor = panel.attr("id") || "accordion_" + Math.floor((Math.random() * 100000) + 1)
   settings = '<div class="form-group pull-right" style="width: 150px;">
                   <div class="input-group">
-                      <span class="input-group-addon" style="border: 0;">'+I18n("mvm_js.accordion.style")+'</span>
-                      <select class="style-accordion form-control" style="display: inline-block;"><option value="default">'+I18n("mvm_js.accordion.default")+'</option><option value="primary">'+I18n("mvm_js.accordion.blue")+'</option><option value="success">'+I18n("mvm_js.accordion.green")+'</option><option value="warning">'+I18n("mvm_js.accordion.yellow")+'</option><option value="danger">'+I18n("mvm_js.accordion.red")+'</option></select>
+                      <span class="input-group-addon" style="border: 0;">'+I18n.t("mvm_js.accordion.style")+'</span>
+                      <select class="style-accordion form-control" style="display: inline-block;"><option value="default">'+I18n.t("mvm_js.accordion.default")+'</option><option value="primary">'+I18n.t("mvm_js.accordion.blue")+'</option><option value="success">'+I18n.t("mvm_js.accordion.green")+'</option><option value="warning">'+I18n.t("mvm_js.accordion.yellow")+'</option><option value="danger">'+I18n.t("mvm_js.accordion.red")+'</option></select>
                   </div>
               </div>'
 
   panel.attr("id", id_accor)
   tpl = $('<div><table class="table table-hover">' +
-          '<thead><th></th><th>'+I18n("mvm_js.accordion.title")+'</th><th class="hidden">'+I18n("mvm_js.accordion.content")+'</th><th></th></thead>' +
+          '<thead><th></th><th>'+I18n.t("mvm_js.accordion.title")+'</th><th class="hidden">'+I18n.t("mvm_js.accordion.content")+'</th><th></th></thead>' +
           '<tbody></tbody>' +
       '</table>'+
-      '<a class="btn btn-default add_item">'+I18n("mvm_js.accordion.add_item")+'<i class="fa fa-plus-circle"></i></a> '+settings+' </div>');
+      '<a class="btn btn-default add_item">'+I18n.t("mvm_js.accordion.add_item")+'<i class="fa fa-plus-circle"></i></a> '+settings+' </div>');
 
   # link buttons
   tpl.find(".add_item").click(->
-      show_form(add_item(I18n("mvm_js.accordion.title_sample")))
+      show_form(add_item(I18n.t("mvm_js.accordion.title_sample")))
       return false;
   )
   tpl.on("click", "a.edit_item", ->
       show_form($(this).closest("tr"))
       return false
   ).on("click", "a.del_item", ->
-      return false if(!confirm(I18n("mvm_js.accordion.confirm_del")))
+      return false if(!confirm(I18n.t("mvm_js.accordion.confirm_del")))
       $(this).closest("tr").fadeDestroy();
       return false
   )
@@ -34,7 +34,7 @@ window.grid_accordion_builder = (panel, editor)->
 
   # add a row in the table
   add_item = (title, text)->
-      tr = $("<tr><td><i class='fa fa-arrows' style='cursor: move;'></i></td><td class='name'></td><td class='hidden'><textarea class='descr hidden'></textarea></td><td class='text-right'><a href='#' class='edit_item' title='"+I18n("mvm_js.accordion.edit")+"'><i class='fa fa-pencil'></i></a> <a href='#' class='del_item' title='"+I18n("mvm_js.accordion.delete")+"'><i class='fa fa-trash'></i></a></td></tr>")
+      tr = $("<tr><td><i class='fa fa-arrows' style='cursor: move;'></i></td><td class='name'></td><td class='hidden'><textarea class='descr hidden'></textarea></td><td class='text-right'><a href='#' class='edit_item' title='"+I18n.t("mvm_js.accordion.edit")+"'><i class='fa fa-pencil'></i></a> <a href='#' class='del_item' title='"+I18n.t("mvm_js.accordion.delete")+"'><i class='fa fa-trash'></i></a></td></tr>")
       tpl.find("tbody").append(tr)
       return update_item(tr, title, text)
 
@@ -94,4 +94,4 @@ window.grid_accordion_builder = (panel, editor)->
       modal.modal("hide")
       editor.trigger("auto_save")
 
-  open_modal({title: I18n("mvm_js.accordion.accordion_panel"), modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: tpl, on_submit: submit_callback })
+  open_modal({title: I18n.t("mvm_js.accordion.accordion_panel"), modal_size: "modal-lg", modal_settings: { keyboard: false, backdrop: "static" }, content: tpl, on_submit: submit_callback })
