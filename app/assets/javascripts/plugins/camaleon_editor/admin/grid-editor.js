@@ -29,10 +29,10 @@ jQuery(function(){
         var textarea = $(this);
         if(textarea.prev().hasClass("panel_grid_editor")){ textarea.prev().show(); return textarea; }
         var tpl_rows = "";
-        $.each({6: 50, 4: 33, 3: 25, 2: 16, 8: 66, 9: 75, 12: 100}, function(k, val){ tpl_rows += '<div class="" data-col="'+k+'" title="'+I18n("mvm_js.insert_column_block", {defaultValue: "Insert a column block with"})+'" "'+val+I18n("mvm_js.of_width", {defaultValue: "% of width."})+'" data-col_title="'+val+'%"><div class="grid_sortable_items"></div></div>'; });
+        $.each({6: 50, 4: 33, 3: 25, 2: 16, 8: 66, 9: 75, 12: 100}, function(k, val){ tpl_rows += '<div class="" data-col="'+k+'" title="'+I18n.t("mvm_js.insert_column_block", {defaultValue: "Insert a column block with"})+'" "'+val+I18n.t("mvm_js.of_width", {defaultValue: "% of width."})+'" data-col_title="'+val+'%"><div class="grid_sortable_items"></div></div>'; });
 
         // break line
-        tpl_rows += '<div class="clearfix" title="'+I18n("mvm_js.insert_break_line", {defaultValue: "Insert a break line to sort the column blocks."})+'" data-col_title="'+I18n("mvm_js.break_line", {defaultValue: "Break Line"})+'" data-col="12"></div>' + $.fn.gridEditor_extra_rows.join("");
+        tpl_rows += '<div class="clearfix" title="'+I18n.t("mvm_js.insert_break_line", {defaultValue: "Insert a break line to sort the column blocks."})+'" data-col_title="'+I18n.t("mvm_js.break_line", {defaultValue: "Break Line"})+'" data-col="12"></div>' + $.fn.gridEditor_extra_rows.join("");
 
         // tpl options
         var tpl_options = "";
@@ -42,27 +42,27 @@ jQuery(function(){
         var editor = $("<div class='panel_grid_editor' id='"+editor_id+"'>"+
             "<div class='grid_editor_menu'>"+
             "<ul class='nav nav-tabs'>"+
-            "<li class='active'><a href='#grid_columns_"+gridEditor_id+"' role='tab' data-toggle='tab'><i class='fa fa-th-list'></i> "+I18n("mvm_js.grid_editor.blocks", {defaultValue: "Blocks"})+"</a></li>"+
-            "<li class=''><a href='#grid_contents_"+gridEditor_id+"' role='tab' data-toggle='tab'><i class='fa fa-table'></i> "+I18n("mvm_js.grid_editor.contents", {defaultValue: "Contents"})+"</a></li>"+
+            "<li class='active'><a href='#grid_columns_"+gridEditor_id+"' role='tab' data-toggle='tab'><i class='fa fa-th-list'></i> "+I18n.t("mvm_js.grid_editor.blocks", {defaultValue: "Blocks"})+"</a></li>"+
+            "<li class=''><a href='#grid_contents_"+gridEditor_id+"' role='tab' data-toggle='tab'><i class='fa fa-table'></i> "+I18n.t("mvm_js.grid_editor.contents", {defaultValue: "Contents"})+"</a></li>"+
             '<li>' +
-            '<a class="dropdown-toggle" href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+I18n("grid_editor.templates")+' <span class="caret"></span> </a>'+
+            '<a class="dropdown-toggle" href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+I18n.t("grid_editor.templates")+' <span class="caret"></span> </a>'+
             '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1"> ' +
-            '<li><a class="list_templates" title="Grid Templates" href = "'+root_url+'admin/plugins/camaleon_editor/grid_editor" >'+I18n("mvm_js.grid_editor.list")+'</a></li >'+
-            '<li><a class="new_template" title="New Template" href = "'+root_url+'/admin/plugins/camaleon_editor/grid_editor/new" >'+I18n("mvm_js.grid_editor.save_tpl")+'</a></li >'+
-            "<li><a class='grid_style_settings' title='Style Settings' href='#'><i class='fa fa-paint-brush'></i> "+I18n("mvm_js.button.settings")+"</a></li>"+
+            '<li><a class="list_templates" title="Grid Templates" href = "'+root_url+'admin/plugins/camaleon_editor/grid_editor" >'+I18n.t("mvm_js.grid_editor.list")+'</a></li >'+
+            '<li><a class="new_template" title="New Template" href = "'+root_url+'/admin/plugins/camaleon_editor/grid_editor/new" >'+I18n.t("mvm_js.grid_editor.save_tpl")+'</a></li >'+
+            "<li><a class='grid_style_settings' title='Style Settings' href='#'><i class='fa fa-paint-brush'></i> "+I18n.t("mvm_js.button.settings")+"</a></li>"+
             '</ul> ' +
             '</li>'+
-            "<li class=''><a href='#' class='clear'><i class='fa fa-trash'></i>  "+I18n("mvm_js.grid_editor.clear")+"</a></li>"+
-            "<li class=''><a href='#' class='toggle_panel_grid'><i class='fa fa-share'></i>  "+I18n("mvm_js.grid_editor.text_editor")+"</a></li>"+
-            "<li class='pull-right'><label style='margin: 0px;'><input class='toggle_preview_grid' type='checkbox'/> "+I18n("mvm_js.grid_editor.preview")+"</label><br><label style='margin: 0px;'><input class='toggle_fullscreen_grid' type='checkbox'/> "+I18n("mvm_js.grid_editor.fullscreen")+"</label></li>"+
+            "<li class=''><a href='#' class='clear'><i class='fa fa-trash'></i>  "+I18n.t("mvm_js.grid_editor.clear")+"</a></li>"+
+            "<li class=''><a href='#' class='toggle_panel_grid'><i class='fa fa-share'></i>  "+I18n.t("mvm_js.grid_editor.text_editor")+"</a></li>"+
+            "<li class='pull-right'><label style='margin: 0px;'><input class='toggle_preview_grid' type='checkbox'/> "+I18n.t("mvm_js.grid_editor.preview")+"</label><br><label style='margin: 0px;'><input class='toggle_fullscreen_grid' type='checkbox'/> "+I18n.t("mvm_js.grid_editor.fullscreen")+"</label></li>"+
             "</ul>"+
             "<div class='tab-content'>"+
             "<div role='tabpanel' class='tab-pane active' id='grid_columns_"+gridEditor_id+"'> "+
-            '<p class="text-info">'+I18n("mvm_js.grid_editor.drag_drop_blocks")+'</p>'+
+            '<p class="text-info">'+I18n.t("mvm_js.grid_editor.drag_drop_blocks")+'</p>'+
             tpl_rows+
             " </div>"+
             "<div role='tabpanel' class='tab-pane' id='grid_contents_"+gridEditor_id+"'>"+
-            '<p class="text-info">'+I18n("mvm_js.grid_editor.drag_drop_content")+'</p>'+
+            '<p class="text-info">'+I18n.t("mvm_js.grid_editor.drag_drop_content")+'</p>'+
             tpl_options+
             "</div>"+
             "</div>"+
@@ -101,9 +101,9 @@ jQuery(function(){
             var options = "<div class='dropdown'>" +
                 "<a class='dropdown-toggle' data-toggle='dropdown'>&nbsp; <span class='caret'></span></a>" +
                 "<ul class='dropdown-menu auto_with pull-right' role='menu'>"+
-                "<li><a class='grid_col_remove' title='"+I18n("mvm_js.button.delete")+"' href='#'><i class='fa fa-trash-o'></i> "+I18n("mvm_js.button.delete")+"</a></li>"+
-                "<li><a class='grid_col_clone' title='"+I18n("mvm_js.button.clone")+"' href='#'><i class='fa fa-copy'></i> "+I18n("mvm_js.button.clone")+"</a></li>"+
-                "<li><a class='grid_style_settings' title='"+I18n("mvm_js.button.style_settings")+"' href='#'><i class='fa fa-paint-brush'></i> "+I18n("mvm_js.button.settings")+"</a></li>"+
+                "<li><a class='grid_col_remove' title='"+I18n.t("mvm_js.button.delete")+"' href='#'><i class='fa fa-trash-o'></i> "+I18n.t("mvm_js.button.delete")+"</a></li>"+
+                "<li><a class='grid_col_clone' title='"+I18n.t("mvm_js.button.clone")+"' href='#'><i class='fa fa-copy'></i> "+I18n.t("mvm_js.button.clone")+"</a></li>"+
+                "<li><a class='grid_style_settings' title='"+I18n.t("mvm_js.button.style_settings")+"' href='#'><i class='fa fa-paint-brush'></i> "+I18n.t("mvm_js.button.settings")+"</a></li>"+
                 "</ul>"+
                 "</div>" ;
             column.addClass("drg_column btn btn-default");
@@ -130,10 +130,10 @@ jQuery(function(){
             var options = "<div class='dropdown'>" +
                 "<a class='dropdown-toggle' data-toggle='dropdown'>&nbsp; <span class='caret'></span></a>" +
                 "<ul class='dropdown-menu auto_with pull-right' role='menu'>"+
-                "<li><a class='grid_content_remove' title='"+I18n("mvm_js.button.delete")+"' href='#'><i class='fa fa-trash-o'></i> "+I18n("mvm_js.button.delete")+"</a></li>"+
-                "<li><a class='grid_content_clone' title='"+I18n("mvm_js.button.clone")+"' href='#'><i class='fa fa-copy'></i> "+I18n("mvm_js.button.clone")+"</a></li>"+
-                "<li><a class='grid_content_edit' title='"+I18n("mvm_js.button.edit")+"' href='#'><i class='fa fa-pencil'></i> "+I18n("button.edit")+"</a></li>"+
-                "<li><a class='grid_style_settings' title='"+I18n("mvm_js.button.style_settings")+"' href='#'><i class='fa fa-paint-brush'></i> "+I18n("mvm_js.button.settings")+"</a></li>"+
+                "<li><a class='grid_content_remove' title='"+I18n.t("mvm_js.button.delete")+"' href='#'><i class='fa fa-trash-o'></i> "+I18n.t("mvm_js.button.delete")+"</a></li>"+
+                "<li><a class='grid_content_clone' title='"+I18n.t("mvm_js.button.clone")+"' href='#'><i class='fa fa-copy'></i> "+I18n.t("mvm_js.button.clone")+"</a></li>"+
+                "<li><a class='grid_content_edit' title='"+I18n.t("mvm_js.button.edit")+"' href='#'><i class='fa fa-pencil'></i> "+I18n.t("button.edit")+"</a></li>"+
+                "<li><a class='grid_style_settings' title='"+I18n.t("mvm_js.button.style_settings")+"' href='#'><i class='fa fa-paint-brush'></i> "+I18n.t("mvm_js.button.settings")+"</a></li>"+
                 "</ul>"+
                 "</div>";
             content.addClass("drg_item btn btn-default");
@@ -150,14 +150,14 @@ jQuery(function(){
         function do_editor_menus(editor){
             // toggle editor menus
             editor.find(".grid_editor_menu .toggle_panel_grid").click(function(){
-                if(!confirm(I18n("mvm_js.grid_editor.toggle_editor"))) return false;
+                if(!confirm(I18n.t("mvm_js.grid_editor.toggle_editor"))) return false;
                 editor.hide();
                 if(editor.data("tiny_backup")) tinyEditor.setContent(editor.data("tiny_backup"));
                 tinymce_panel.show();
                 return false;
             });
             editor.find(".grid_editor_menu .clear").click(function(){
-                if(!confirm(I18n("mvm_js.grid_editor.clear"))) return false;
+                if(!confirm(I18n.t("mvm_js.grid_editor.clear"))) return false;
                 editor.find(".panel_grid_body").html("");
                 editor.trigger("auto_save");
                 return false;
@@ -229,7 +229,7 @@ jQuery(function(){
 
             // content dropdown options
             jQuery('.panel_grid_body ', editor).on("click", '.drg_item .grid_content_remove', function (e) {
-                if(confirm(I18n("mvm_js.grid_editor.del_block"))) {
+                if(confirm(I18n.t("mvm_js.grid_editor.del_block"))) {
                     jQuery(this).closest(".drg_item").fadeDestroy();
                     editor.trigger("auto_save");
                 }
@@ -252,7 +252,7 @@ jQuery(function(){
 
             // column dropdown options
             jQuery('.panel_grid_body ', editor).on("click", '.grid_col_remove', function (e) {
-                if(confirm(I18n("mvm_js.grid_editor.del_block"))){
+                if(confirm(I18n.t("mvm_js.grid_editor.del_block"))){
                     jQuery(this).closest(".drg_column").fadeDestroy();
                     editor.trigger("auto_save");
                 }
@@ -374,10 +374,10 @@ jQuery(function(){
         // grid editor button
         var grid_editor_button = function(editor){
             editor.addButton('grid_editor', {
-                text: I18n("mvm_js.grid_editor.visual_editor"),
+                text: I18n.t("mvm_js.grid_editor.visual_editor"),
                 icon: false,
                 onclick: function(){
-                    if(!confirm(I18n("mvm_js.grid_editor.change_editor"))) return false;
+                    if(!confirm(I18n.t("mvm_js.grid_editor.change_editor"))) return false;
                     var area = $(editor.targetElm).gridEditor(editor);
                 }
             });
