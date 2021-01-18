@@ -1,4 +1,5 @@
 # grid content tab builder
+#
 window.grid_accordion_builder = (panel, editor)->
   id_accor = panel.attr("id") || "accordion_" + Math.floor((Math.random() * 100000) + 1)
   settings = '<div class="form-group pull-right" style="width: 150px;">
