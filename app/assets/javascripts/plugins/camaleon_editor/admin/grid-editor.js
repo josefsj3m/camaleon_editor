@@ -45,7 +45,7 @@ jQuery(function(){
             "<li class='active'><a href='#grid_columns_"+gridEditor_id+"' role='tab' data-toggle='tab'><i class='fa fa-th-list'></i> "+I18n.t("mvm_js.grid_editor.blocks", {defaultValue: "Blocks"})+"</a></li>"+
             "<li class=''><a href='#grid_contents_"+gridEditor_id+"' role='tab' data-toggle='tab'><i class='fa fa-table'></i> "+I18n.t("mvm_js.grid_editor.contents", {defaultValue: "Contents"})+"</a></li>"+
             '<li>' +
-            '<a class="dropdown-toggle" href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+I18n.t("grid_editor.templates")+' <span class="caret"></span> </a>'+
+            '<a class="dropdown-toggle" href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+I18n.t("mvm_js.grid_editor.templates")+' <span class="caret"></span> </a>'+
             '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1"> ' +
             '<li><a class="list_templates" title="Grid Templates" href = "'+root_url+'admin/plugins/camaleon_editor/grid_editor" >'+I18n.t("mvm_js.grid_editor.list")+'</a></li >'+
             '<li><a class="new_template" title="New Template" href = "'+root_url+'/admin/plugins/camaleon_editor/grid_editor/new" >'+I18n.t("mvm_js.grid_editor.save_tpl")+'</a></li >'+
